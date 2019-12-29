@@ -27,7 +27,7 @@ const StyledNav = styled.div`
       .navbar__links {
         a {
           color: white;
-          padding: calc(${spacing.padding.small}px - 9px)
+          padding: calc(${spacing.padding.small}px - 8px)
             ${spacing.padding.small}px;
           transition: 0.25s ease-in-out;
           height: 100%;
@@ -43,7 +43,7 @@ const StyledNav = styled.div`
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      height: 60px;
+      height: 61px;
       a {
         color: white;
         font-family: ${typography.family.display};
@@ -58,7 +58,7 @@ const StyledNav = styled.div`
       margin-left: auto;
       margin-right: 2%;
       align-self: flex-end;
-      height: 60px;
+      height: 61px;
     }
   }
 `
