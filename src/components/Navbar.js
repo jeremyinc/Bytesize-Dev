@@ -13,24 +13,24 @@ const StyledNav = styled.div`
   position: fixed;
   z-index: 100;
   div {
+    align-items: center;
     ul {
       display: flex;
       flex-flow: row nowrap;
-      align-items: center;
       li {
-        padding: ${spacing.padding.xsmall}px 0;
+        padding: ${spacing.padding.xxsmall}px 0;
         font-size: ${typography.size.s2}rem;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         opacity: 1;
+        cursor: pointer;
       }
       .navbar__links {
         a {
           color: white;
-          padding: calc(${spacing.padding.small}px - 8px)
-            ${spacing.padding.small}px;
+          padding: 21px ${spacing.padding.small}px;
           transition: 0.25s ease-in-out;
-          height: 100%;
+          cursor: pointer;
           :hover {
             transition: 0.25s ease-in-out;
             background-color: ${color.magenta};
@@ -43,7 +43,6 @@ const StyledNav = styled.div`
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      height: 61px;
       a {
         color: white;
         font-family: ${typography.family.display};
@@ -54,12 +53,11 @@ const StyledNav = styled.div`
         margin-right: ${spacing.padding.xsmall}px;
       }
     }
-    .navbar__right {
+    /* .navbar__right {
       margin-left: auto;
       margin-right: 2%;
       align-self: flex-end;
-      height: 61px;
-    }
+    } */
   }
 `
 
