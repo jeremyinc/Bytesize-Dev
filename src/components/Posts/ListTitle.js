@@ -7,7 +7,7 @@ import { color, spacing, typography } from "../../constants/styles.js"
 var StyledTitle = styled.div`
   font-size: 1.3rem;
   text-align: center;
-  margin-top: ${spacing.padding.xxxlarge}px;
+  margin-top: calc(1.25 * ${spacing.padding.xxxlarge}px);
   margin-bottom: ${spacing.padding.medium}px;
 
   h1 {
