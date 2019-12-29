@@ -15,6 +15,8 @@ const CustomRenderers = {
 }
 
 var StyledBody = styled.div`
+  width: 760px;
+  margin: auto;
   h2 {
     font-size: ${typography.size.l1}rem;
     font-family: "Calibre-Semibold";

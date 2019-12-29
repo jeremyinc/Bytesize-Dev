@@ -15,7 +15,7 @@ var StyledPost = styled.div`
   margin: auto;
   margin-top: calc(1.25 * ${spacing.padding.xxxlarge}px);
   /* this width of 760 would be used if I did not use the StyledTips */
-  width: 760px;
+  width: 960px;
 `
 
 // var StyledTips = styled.div`

@@ -8,22 +8,28 @@ var StyledIntro = styled.div`
   display: flex;
   flex-flow: column nowrap;
   h1 {
+    width: 760px;
+    margin: auto;
     font-size: ${typography.size.l3}rem;
     font-family: "GT-Pressura-Pro-Mono-Bold";
     letter-spacing: -0.05em;
     margin-bottom: ${spacing.padding.medium}px;
   }
   p {
+    width: 760px;
+    margin: auto;
     font-size: ${typography.size.m2}rem;
     color: ${color.gray8};
     line-height: 1.35em;
     margin-bottom: ${spacing.padding.small}px;
   }
   .postIntro__details {
+    width: 760px;
+    margin: auto;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin-bottom: ${spacing.padding.small}px;
+    margin-bottom: ${spacing.padding.medium}px;
     .details__read {
       margin-left: auto;
       display: flex;
@@ -49,7 +55,11 @@ var StyledIntro = styled.div`
     }
   }
   .gatsby-image-wrapper {
-    margin-bottom: ${spacing.padding.large}px;
+    width: 960px;
+    margin: auto;
+    border-radius: 8px;
+    margin-bottom: ${spacing.padding.xlarge}px;
+    box-shadow: 0px 20px 48px rgba(0, 0, 0, 0.25);
   }
 `
 
