@@ -1,51 +1,36 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
-  console.log("NODE TYPES", node.internal.type)
-  if (node.internal.type === `Mdx`) {
-    const slug = createFilePath({ node, getNode, basePath: `postscool` })
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-  }
-}
-
 exports.createPages = async function({ actions, graphql }) {
   // find Post Data
   const { data } = await graphql(`
-    query AllPosts {
-      allMdx {
+    query {
+      allContentfulBlogPost {
         edges {
           node {
-            fields {
-              slug
-            }
+            slug
           }
         }
       }
     }
   `)
   // Create Individual Post Pages
-  data.allMdx.edges.forEach(edge => {
-    const slug = edge.node.fields.slug
+  data.allContentfulBlogPost.edges.forEach(edge => {
+    const slug = edge.node.slug
     actions.createPage({
       path: slug,
-      component: require.resolve(`./src/templates/blog-post-template.js`),
+      component: require.resolve(
+        `./src/templates/single-post-template-contentful.js`
+      ),
       context: { slug: slug },
     })
   })
   // create a page for React;
   // create pages are concerned with the amount of pages and any additional data.
   // but ultimately do not control the content. that is up to the template to leverage and make use of.
-  createTagPage("react", actions)
-  createTagPage("styled-components", actions)
-  createTagPage("javascript", actions)
-  createTagPage("node-js", actions)
-  createTagPage("style", actions)
+  tags.forEach(tag => createTagPage(tag, actions))
 }
+
+var tags = ["react", "javascript", "node js"]
 
 function createTagPage(tagName, actions) {
   // create the number of pages you wish to generate for a given tag
@@ -56,8 +41,11 @@ function createTagPage(tagName, actions) {
     tag.push(tagName)
     actions.createPage({
       path: `tag/${tagName}`,
-      component: require.resolve(`./src/templates/post-list-template.js`),
+      component: require.resolve(
+        `./src/templates/post-list-template-contentful.js`
+      ),
       context: { tags: tag },
     })
+    console.log("PASSING IN A TAG ARRAY", tag)
   })
 }

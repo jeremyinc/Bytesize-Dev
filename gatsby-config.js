@@ -4,9 +4,27 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` })
+
 module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["IBM Plex Mono"],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

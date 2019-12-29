@@ -2,18 +2,21 @@ import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import mq from "../Utilities/MediaQuery"
+import { color, spacing, typography } from "../../constants/styles.js"
 
 var StyledTitle = styled.div`
   font-size: 1.3rem;
   text-align: center;
-  margin-top: var(--space-xlarge);
-  margin-bottom: var(--space-xlarge);
+  margin-top: ${spacing.padding.xxxlarge}px;
+  margin-bottom: ${spacing.padding.medium}px;
+
   h1 {
     font-size: 4.8rem;
-    font-family: "GT-Pressura-Pro-Mono-Trial-Regular";
+    font-family: "GT-Pressura-Pro-Mono-Bold";
     letter-spacing: -0.025em;
     span {
       text-transform: capitalize;
+      width: 100%;
     }
   }
   h3 {
@@ -21,8 +24,8 @@ var StyledTitle = styled.div`
     font-family: "Calibre-Medium";
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--accent-primary);
-    margin-bottom: var(--space-xsmall);
+    color: ${color.primary};
+    margin-bottom: ${spacing.padding.xsmall}px;
   }
 `
 
@@ -31,7 +34,7 @@ const ListTitle = props => {
     <StyledTitle className="col-6">
       <h3>found {props.postAmount} articles</h3>
       <h1>
-        Articles Tagged with <span>{props.pageTitle}</span>
+        Tagged with <span>{props.pageTitle}</span>
       </h1>
     </StyledTitle>
   )

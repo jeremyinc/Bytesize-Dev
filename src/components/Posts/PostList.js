@@ -6,9 +6,10 @@ import mq from "../Utilities/MediaQuery"
 import Img from "gatsby-image"
 import PostCard from "./PostCard.js"
 import ListTitle from "./ListTitle.js"
+import { spacing } from "../../constants/styles.js"
 
 var StyledList = styled.div`
-  margin-bottom: var(--space-xlarge);
+  margin-bottom: ${spacing.padding.xxxlarge}px;
 `
 
 const PostList = props => {

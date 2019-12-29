@@ -4,11 +4,11 @@ import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import routes from "../constants/routes.js"
 import SEO from "./SEO.js"
+import { color, spacing, typography } from "../constants/styles.js"
 
 const StyledNav = styled.div`
   width: 100%;
-  background-color: var(--accent-primary);
-  font-family: "Calibre-Regular";
+  background-color: ${color.primary};
   position: fixed;
   z-index: 100;
   div {
@@ -16,8 +16,8 @@ const StyledNav = styled.div`
       display: flex;
       flex-flow: row nowrap;
       li {
-        padding: var(--space-xsmall) 0;
-        font-size: var(--type-normalInteractionText);
+        padding: ${spacing.padding.xsmall}px 0;
+        font-size: ${typography.size.s2}rem;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         opacity: 1;
@@ -25,11 +25,11 @@ const StyledNav = styled.div`
       .navbar__links {
         a {
           color: white;
-          padding: var(--space-xsmall) var(--space-small);
+          padding: ${spacing.padding.xsmall}px ${spacing.padding.small}px;
           transition: 0.25s ease-in-out;
           :hover {
             transition: 0.25s ease-in-out;
-            background-color: var(--accent-hover);
+            background-color: ${color.magenta};
           }
         }
       }
@@ -38,7 +38,7 @@ const StyledNav = styled.div`
       margin-right: auto;
       a {
         color: white;
-        font-family: "GT-Pressura-Pro-Mono-Trial-Regular";
+        font-family: ${typography.family.display};
       }
     }
     .navbar__right {

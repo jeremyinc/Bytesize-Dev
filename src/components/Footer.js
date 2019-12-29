@@ -6,6 +6,7 @@ import routes from "../constants/routes.js"
 import social from "../constants/social.js"
 import { useStaticQuery, graphql } from "gatsby"
 import mq from "./Utilities/MediaQuery"
+import { color, spacing, typography } from "../constants/styles.js"
 
 const query = graphql`
   query {
@@ -20,9 +21,9 @@ const query = graphql`
 
 const StyledFooter = styled.div`
   width: 100%;
-  background-color: var(--accent-primary);
+  background-color: ${color.primary};
   margin-top: auto;
-  padding-bottom: var(--space-large);
+  padding-bottom: ${spacing.padding.large}px;
   font-size: 1.6rem;
   color: white;
   div {
@@ -30,9 +31,13 @@ const StyledFooter = styled.div`
     ul {
       display: flex;
       flex-flow: row nowrap;
-      padding: var(--space-small) 0;
+      padding: ${spacing.padding.small}px 0;
+      width: 400px;
       ${mq[3]} {
-        background-color: var(--accent-primary);
+        background-color: ${color.primary};
+      }
+      ${mq[2]} {
+        width: 320px;
       }
       justify-content: space-around;
       align-items: center;
@@ -51,12 +56,14 @@ const StyledFooter = styled.div`
           font-family: "Calibre-Medium";
           text-transform: uppercase;
           letter-spacing: 0.2em;
-          padding-top: var(--space-small);
+          padding-top: ${spacing.padding.small}px;
         }
       }
       &.footer__right {
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.15em;
+        justify-content: space-between;
+        margin-left: auto;
       }
     }
   }
@@ -72,21 +79,25 @@ const Footer = () => {
   return (
     <StyledFooter>
       <div className="site__container">
-        <ul className="footer__left col-2">
-          <li>{siteMetadata.description}</li>
-          <li className="footer__rights">all rights reserved 2019</li>
-        </ul>
-        <ul className="footer__right col-2">
-          {social.map((platform, index) => {
-            return (
-              <li key={index} className="link__underline">
-                <a target="_blank" href={platform.path}>
-                  {platform.text}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
+        <div className=" col-3">
+          <ul className="footer__left">
+            <li>{siteMetadata.description}</li>
+            <li className="footer__rights">all rights reserved 2019</li>
+          </ul>
+        </div>
+        <div className="col-3">
+          <ul className="footer__right">
+            {social.map((platform, index) => {
+              return (
+                <li key={index} className="link__underline">
+                  <a target="_blank" href={platform.path}>
+                    {platform.text}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </StyledFooter>
   )

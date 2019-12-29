@@ -13,7 +13,7 @@ const routes = [
   },
   {
     text: "node js",
-    path: "/tag/node-js",
+    path: "/tag/node%20js",
   },
   {
     text: "style",
