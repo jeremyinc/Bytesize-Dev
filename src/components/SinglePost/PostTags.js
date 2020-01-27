@@ -11,7 +11,7 @@ var StyledTags = styled.div`
   text-transform: uppercase;
   align-items: center;
   letter-spacing: 0.15em;
-  margin-bottom: ${spacing.padding.medium}px;
+  margin-bottom: ${spacing.padding.large}px;
   a {
     padding: ${spacing.padding.xxsmall}px ${spacing.padding.small}px;
     color: ${color.primary};

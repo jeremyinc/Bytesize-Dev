@@ -7,6 +7,7 @@ import PostIntro from "./PostIntro.js"
 import CodeKeyword from "./CodeKeyword"
 import PostTags from "./PostTags"
 import { color, spacing, typography } from "../../constants/styles.js"
+import SocialShare from "./SocialShare"
 
 const CustomRenderers = {
   code: CodeBlock,
@@ -15,8 +16,9 @@ const CustomRenderers = {
 }
 
 var StyledBody = styled.div`
-  width: 760px;
+  width: 80%;
   margin: auto;
+  margin-bottom: ${spacing.padding.xxlarge}px;
   h2 {
     font-size: ${typography.size.l1}rem;
     font-family: "Calibre-Semibold";
@@ -72,6 +74,7 @@ const PostBody = ({ post }) => {
         renderers={CustomRenderers}
       ></ReactMarkdown>
       <PostTags tags={post.postTags} />
+      <SocialShare post={post} />
     </StyledBody>
   )
 }

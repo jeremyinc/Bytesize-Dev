@@ -25,6 +25,8 @@ export const spacing = {
   borderRadius: {
     large: 20,
     medium: 15,
+    small: 8,
+    xsmall: 4,
   },
 }
 
@@ -48,7 +50,7 @@ export const typography = {
     m2: 2.6,
     l1: 3.4,
     l2: 4.8,
-    l3: 6.3,
+    l3: 6.4,
     xl1: 20,
   },
 }

@@ -4,10 +4,10 @@ import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import { navigate } from "gatsby"
 import Img from "gatsby-image"
-import mq from "../Utilities/MediaQuery"
+import mq from "../../Utilities/MediaQuery"
 
 import ReactMarkdown from "react-markdown"
-import { color, spacing, typography } from "../../constants/styles.js"
+import { color, spacing, typography } from "../../../constants/styles.js"
 
 var { useEffect, useState, useLayoutEffect } = React
 
@@ -69,7 +69,7 @@ var StyledPost = styled.div`
 
 const PostCard = props => {
   var post = props.post
-  console.log("POST MONEY", post)
+  console.log("RELATED POSTS", post)
   function goToArticle() {
     console.log("You clicked for this article", post.slug)
     // navigate(`${props.pageTitle}/${post.fields.slug}`)
@@ -84,18 +84,6 @@ const PostCard = props => {
     imageRef.current.addEventListener("click", () => {
       goToArticle()
     })
-
-    // const cards = document.querySelectorAll(
-    //   `.${imageRef.current.props.className}`
-    // )
-    // cards.forEach(card => {
-    //   console.log("POST SLUG", post.slug)
-    //   if (post.slug == post.slug) {
-    //     card.addEventListener("click", () => {
-    //       goToArticle()
-    //     })
-    //   }
-    // })
   }, [])
 
   return (
@@ -105,13 +93,7 @@ const PostCard = props => {
       </div>
       <h1>{post.postTitle}</h1>
       <p>{post.postDescription.postDescription}</p>
-      {/* <ReactMarkdown
-        source={post.postContent.postContent}
-        renderers={{
-          code: CodeBlock,
-        }}
-      ></ReactMarkdown> */}
-      <div className="post__tags">
+      {/* <div className="post__tags">
         {post.postTags.map((tag, index) => {
           if (index <= 1) {
             return <Link to={`tag/${tag}`}>{tag}</Link>
@@ -121,7 +103,7 @@ const PostCard = props => {
             return <h3>+ {extraTags.length} more</h3>
           }
         })}
-      </div>
+      </div> */}
     </StyledPost>
   )
 }

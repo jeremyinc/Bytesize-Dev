@@ -4,19 +4,25 @@ import { color, spacing, typography } from "../../constants/styles.js"
 import Img from "gatsby-image"
 import { AiOutlineRead } from "react-icons/ai"
 
+var contentWidths = {
+  medium: 80,
+  large: 100,
+}
+
 var StyledIntro = styled.div`
   display: flex;
   flex-flow: column nowrap;
   h1 {
-    width: 760px;
+    width: ${contentWidths.medium}%;
     margin: auto;
     font-size: ${typography.size.l3}rem;
     font-family: "GT-Pressura-Pro-Mono-Bold";
     letter-spacing: -0.05em;
     margin-bottom: ${spacing.padding.medium}px;
+    color: ${color.black};
   }
   p {
-    width: 760px;
+    width: ${contentWidths.medium}%;
     margin: auto;
     font-size: ${typography.size.m2}rem;
     color: ${color.gray8};
@@ -24,7 +30,7 @@ var StyledIntro = styled.div`
     margin-bottom: ${spacing.padding.small}px;
   }
   .postIntro__details {
-    width: 760px;
+    width: ${contentWidths.medium}%;
     margin: auto;
     display: flex;
     flex-flow: row wrap;
@@ -55,11 +61,11 @@ var StyledIntro = styled.div`
     }
   }
   .gatsby-image-wrapper {
-    width: 960px;
+    width: ${contentWidths.large}%;
     margin: auto;
-    border-radius: 8px;
+    border-radius: ${spacing.borderRadius.small}px;
     margin-bottom: ${spacing.padding.xlarge}px;
-    box-shadow: 0px 20px 48px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 20px 54px rgba(0, 0, 0, 0.25);
   }
 `
 

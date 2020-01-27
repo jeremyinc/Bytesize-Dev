@@ -6,6 +6,8 @@ import PostIntro from "./PostIntro.js"
 import PostBody from "./PostBody.js"
 import { color, spacing, typography } from "../../constants/styles.js"
 import mq from "../Utilities/MediaQuery"
+import PostList from "./RelatedPosts/PostList"
+import CodePen from "./Codepen"
 
 const CustomRenderers = {
   code: CodeBlock,
@@ -14,41 +16,35 @@ const CustomRenderers = {
 var StyledPost = styled.div`
   margin: auto;
   margin-top: calc(1.25 * ${spacing.padding.xxxlarge}px);
-  /* this width of 760 would be used if I did not use the StyledTips */
   width: 960px;
 `
 
-// var StyledTips = styled.div`
-//   width: 250px;
-//   background-color: #f3f2fe;
-//   height: 300px;
-//   margin-top: 560px;
-//   border-radius: ${spacing.borderRadius.medium}px;
-//   &.left {
-//     visibility: hidden;
-//   }
-//   ${mq[3]} {
-//     display: none;
-//   }
-//   &.right {
-//     margin-right: 4%;
-//     margin-left: 0;
-//   }
-// `
+var { useEffect, useState } = React
 
 const SinglePost = ({ post }) => {
   console.log("YOUR SINGLE POST", post)
+  // need to get height of the StyledPost, e.g. body, so I can target the visibility of codepen icon
+  // based off of scroll position;
+  var StyledPostRef = React.createRef()
+  var [state, setState] = useState(0)
+  useEffect(() => {
+    setState(() => (state = StyledPostRef.current.getBoundingClientRect()))
+  }, [])
   return (
-    <div className="site__container">
-      <StyledPost>
-        <PostIntro
-          postTitle={post.postTitle}
-          postDescription={post.postDescription.postDescription}
-          postImage={post.postCoverImage.fluid}
-        />
-        <PostBody post={post} />
-      </StyledPost>
-    </div>
+    <>
+      <div className="site__container">
+        <StyledPost ref={StyledPostRef}>
+          <PostIntro
+            postTitle={post.postTitle}
+            postDescription={post.postDescription.postDescription}
+            postImage={post.postCoverImage.fluid}
+          />
+          <PostBody post={post} />
+        </StyledPost>
+        <PostList post={post} />
+      </div>
+      <CodePen postHeight={state} />
+    </>
   )
 }
 

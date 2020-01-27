@@ -53,11 +53,10 @@ const StyledNav = styled.div`
         margin-right: ${spacing.padding.xsmall}px;
       }
     }
-    /* .navbar__right {
+    .navbar__right {
       margin-left: auto;
       margin-right: 2%;
-      align-self: flex-end;
-    } */
+    }
   }
 `
 

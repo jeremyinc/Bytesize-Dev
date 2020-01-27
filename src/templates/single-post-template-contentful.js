@@ -46,6 +46,20 @@ export const query = graphql`
           ...GatsbyContentfulFluid_withWebp
         }
       }
+      relatedPosts {
+        relatedPosts {
+          postTitle
+          postDescription {
+            postDescription
+          }
+          postCoverImage {
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          slug
+        }
+      }
     }
   }
 `
