@@ -1,4 +1,5 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require("path")
 
 exports.createPages = async function({ actions, graphql }) {
   // find Post Data
@@ -17,8 +18,8 @@ exports.createPages = async function({ actions, graphql }) {
   data.allContentfulBlogPost.edges.forEach(edge => {
     const slug = edge.node.slug
     actions.createPage({
-      path: slug,
-      component: require.resolve(
+      path: `/${slug}`,
+      component: path.resolve(
         `./src/templates/single-post-template-contentful.js`
       ),
       context: { slug: slug },
