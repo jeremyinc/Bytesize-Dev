@@ -41,17 +41,17 @@ const Codepen = props => {
   //   var CodepenRef = document.querySelector(".post__codepen")
   var articleHeight = props.postHeight.height - 980
 
-  // if (window !== undefined) {
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY > articleHeight && state) {
-  //       //   CodepenRef.style.opacity = 0.2
-  //       setState(curState => (state = false))
-  //     } else if (window.scrollY < articleHeight && !state) {
-  //       //   CodepenRef.style.opacity = 1
-  //       setState(curState => (state = true))
-  //     }
-  //   })
-  // }
+  if (typeof window !== `undefined`) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > articleHeight && state) {
+        //   CodepenRef.style.opacity = 0.2
+        setState(curState => (state = false))
+      } else if (window.scrollY < articleHeight && !state) {
+        //   CodepenRef.style.opacity = 1
+        setState(curState => (state = true))
+      }
+    })
+  }
 
   return (
     <StyledCircle className="post__codepen" show={state}>
