@@ -15,15 +15,10 @@ const SinglePostTemplate = props => {
   var pageTitle = post.postTitle
   console.log("POST EDGES", props.data.contentfulBlogPost)
   return (
-    // <Layout>
-    //   <SEO title={`${pageTitle}`} />
-
-    //   <PostList posts={edges} pageTitle={pageTitle} />
-    // </Layout>
-    <Layout>
+    <>
       <SEO title={`${pageTitle}`} />
       <SinglePost post={post} />
-    </Layout>
+    </>
   )
 }
 

@@ -24,14 +24,14 @@ var StyledLayout = styled.div`
 const Layout = props => {
   console.log("YOUR PROCESS VAR IS", process)
   return (
-    <div>
+    <>
       <Global />
       <StyledLayout>
         <Navbar />
         {props.children}
         <Footer />
       </StyledLayout>
-    </div>
+    </>
   )
 }
 

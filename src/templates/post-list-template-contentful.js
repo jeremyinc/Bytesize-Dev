@@ -15,11 +15,11 @@ const PostListTemplate = props => {
   console.log("POST LIST POST EDGES", edges)
 
   return (
-    <Layout>
+    <>
       <SEO title={`${pageTitle}`} />
 
       <PostList posts={edges} pageTitle={pageTitle} />
-    </Layout>
+    </>
   )
 }
 

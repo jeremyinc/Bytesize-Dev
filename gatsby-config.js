@@ -11,6 +11,12 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-transition-link`,
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout.js`),
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
