@@ -14,9 +14,9 @@ var StyledLayout = styled.div`
   flex-direction: column;
   .site__container {
     max-width: 1600px;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
     flex-flow: row wrap;
   }
 `
@@ -24,14 +24,14 @@ var StyledLayout = styled.div`
 const Layout = props => {
   console.log("YOUR PROCESS VAR IS", process)
   return (
-    <>
+    <div>
       <Global />
       <StyledLayout>
         <Navbar />
         {props.children}
         <Footer />
       </StyledLayout>
-    </>
+    </div>
   )
 }
 

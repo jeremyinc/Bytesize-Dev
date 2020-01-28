@@ -52,7 +52,7 @@ const GlobalStyles = () => {
           --type-smallInteractionText: 1.3rem;
         }
 
-        html,
+        /* html,
         body,
         div,
         span,
@@ -140,7 +140,7 @@ const GlobalStyles = () => {
           font: inherit;
           vertical-align: baseline;
           list-style-type: none;
-        }
+        } */
 
         body {
           color: var(--black-primary);
