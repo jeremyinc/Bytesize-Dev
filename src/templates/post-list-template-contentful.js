@@ -5,12 +5,15 @@ import SEO from "../components/SEO.js"
 import PostList from "../components/Posts/PostList.js"
 import ListTitle from "../components/Posts/ListTitle.js"
 
+var { useEffect } = React
+
 const PostListTemplate = props => {
   var pageTitle = props.pageContext.tags[0]
   var {
     allContentfulBlogPost: { edges },
   } = props.data
   console.log("POST LIST POST EDGES", edges)
+
   return (
     <Layout>
       <SEO title={`${pageTitle}`} />

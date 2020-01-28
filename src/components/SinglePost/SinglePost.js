@@ -15,7 +15,7 @@ const CustomRenderers = {
 
 var StyledPost = styled.div`
   margin: auto;
-  margin-top: calc(1.25 * ${spacing.padding.xxxlarge}px);
+  margin-top: 150px;
   width: 960px;
 `
 
