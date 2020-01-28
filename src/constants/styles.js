@@ -54,3 +54,7 @@ export const typography = {
     xl1: 20,
   },
 }
+
+export const transitions = {
+  page: 0.3,
+}

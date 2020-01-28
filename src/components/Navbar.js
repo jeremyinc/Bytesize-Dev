@@ -4,8 +4,9 @@ import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import routes from "../constants/routes.js"
 import SEO from "./SEO.js"
-import { color, spacing, typography } from "../constants/styles.js"
+import { color, spacing, typography, transitions } from "../constants/styles.js"
 import Logo from "../images/Bytesize_Icon.png"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const StyledNav = styled.div`
   width: 100%;
@@ -14,6 +15,9 @@ const StyledNav = styled.div`
   z-index: 100;
   div {
     align-items: center;
+    .activeLink {
+      opacity: 1;
+    }
     ul {
       display: flex;
       flex-flow: row nowrap;
@@ -69,16 +73,23 @@ const Navbar = () => {
             <img src={Logo} />
           </li>
           <li>
-            <Link to="/">Bytesize Dev</Link>
+            <AniLink fade to="/" duration={transitions.page}>
+              BYTESIZE DEV
+            </AniLink>
           </li>
         </ul>
         <ul className="navbar__right">
           {routes.map((route, index) => {
             return (
               <li className="navbar__links" key={index}>
-                <Link activeClassName="link__active" to={route.path}>
+                <AniLink
+                  activeClassName="link__active"
+                  fade
+                  to={route.path}
+                  duration={transitions.page}
+                >
                   {route.text}
-                </Link>
+                </AniLink>
               </li>
             )
           })}
