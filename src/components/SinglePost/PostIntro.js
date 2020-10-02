@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { color, spacing, typography } from "../../constants/styles.js"
+import { color, spacing, typography, shadows } from "../../constants/styles.js"
 import Img from "gatsby-image"
 import { AiOutlineRead } from "react-icons/ai"
 
@@ -65,7 +65,7 @@ var StyledIntro = styled.div`
     margin: auto;
     border-radius: ${spacing.borderRadius.small}px;
     margin-bottom: ${spacing.padding.xlarge}px;
-    box-shadow: 0px 20px 54px rgba(0, 0, 0, 0.25);
+    box-shadow: ${shadows.xlarge};
   }
 `
 

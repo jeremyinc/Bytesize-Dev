@@ -58,3 +58,10 @@ export const typography = {
 export const transitions = {
   page: 0.3,
 }
+
+export const shadows = {
+  xlarge: "0px 20px 54px rgba(0, 0, 0, 0.25)",
+  large: "0px 12px 28px rgba(0, 0, 0, 0.25)",
+  medium: "0px 10px 10px rgba(0, 0, 0, 0.25)",
+  xsmall: "0px 4px 4px rgba(0, 0, 0, 0.1)",
+}

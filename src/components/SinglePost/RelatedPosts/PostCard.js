@@ -5,9 +5,15 @@ import { Link } from "gatsby"
 import { navigate } from "gatsby"
 import Img from "gatsby-image"
 import mq from "../../Utilities/MediaQuery"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import ReactMarkdown from "react-markdown"
-import { color, spacing, typography } from "../../../constants/styles.js"
+import {
+  color,
+  spacing,
+  typography,
+  transitions,
+} from "../../../constants/styles.js"
 
 var { useEffect, useState, useLayoutEffect } = React
 
@@ -81,15 +87,17 @@ const PostCard = props => {
   useEffect(() => {
     // can't store imageRef in Gatsby Image or safari doesn't initialize it. Have to wrap image in div for it to work
     console.log(imageRef.current)
-    imageRef.current.addEventListener("click", () => {
-      goToArticle()
-    })
+    // imageRef.current.addEventListener("click", () => {
+    //   goToArticle()
+    // })
   }, [])
 
   return (
     <StyledPost className="col-3">
       <div ref={imageRef}>
-        <Img className="post__image" fluid={post.postCoverImage.fluid} />
+        <AniLink fade to={post.slug} duration={transitions.page}>
+          <Img className="post__image" fluid={post.postCoverImage.fluid} />
+        </AniLink>
       </div>
       <h1>{post.postTitle}</h1>
       <p>{post.postDescription.postDescription}</p>

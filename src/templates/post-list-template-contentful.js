@@ -17,7 +17,6 @@ const PostListTemplate = props => {
   return (
     <>
       <SEO title={`${pageTitle}`} />
-
       <PostList posts={edges} pageTitle={pageTitle} />
     </>
   )

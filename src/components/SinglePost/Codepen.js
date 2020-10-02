@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { color, spacing, typography } from "../../constants/styles.js"
+import { color, spacing, typography, shadows } from "../../constants/styles.js"
 import Img from "gatsby-image"
 import { FaCodepen } from "react-icons/fa"
 
@@ -17,7 +17,7 @@ const StyledCircle = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.25);
+  box-shadow: ${shadows.large};
   border: 4px solid #7266ff;
   transition: opacity 0.5s ease;
   opacity: ${props => (props.show ? 1 : 0)};

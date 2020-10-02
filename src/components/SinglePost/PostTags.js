@@ -1,7 +1,13 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { color, spacing, typography } from "../../constants/styles.js"
+import {
+  color,
+  spacing,
+  typography,
+  transitions,
+} from "../../constants/styles.js"
 import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 var StyledTags = styled.div`
   display: flex;
@@ -37,7 +43,11 @@ const PostTags = props => {
   return (
     <StyledTags>
       {props.tags.map(tag => {
-        return <Link to={`tag/${tag}`}>{tag}</Link>
+        return (
+          <AniLink fade to={`tag/${tag}`} duration={transitions.page}>
+            {tag}
+          </AniLink>
+        )
       })}
     </StyledTags>
   )

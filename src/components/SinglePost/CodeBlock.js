@@ -3,7 +3,7 @@ import SyntaxHighlighter from "react-syntax-highlighter"
 //  atomOneLight, xcode, a11yLight,  atelierSeasideLight, foundation
 import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs"
 import styled from "@emotion/styled"
-import { color, spacing, typography } from "../../constants/styles.js"
+import { color, spacing, typography, shadows } from "../../constants/styles.js"
 
 var StyledCode = styled.div`
   font-family: "IBM Plex Mono", monospace;

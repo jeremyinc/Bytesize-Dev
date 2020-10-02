@@ -13,6 +13,7 @@ import {
   spacing,
   typography,
   transitions,
+  shadows,
 } from "../../constants/styles.js"
 
 var { useEffect, useState, useLayoutEffect } = React
@@ -26,7 +27,7 @@ var StyledPost = styled.div`
     cursor: pointer;
     :hover {
       transition: 0.45s ease-in-out;
-      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: ${shadows.medium};
     }
   }
   h1 {
